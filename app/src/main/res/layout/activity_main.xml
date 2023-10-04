@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOGIN"
+        android:textSize="30dp"
+        android:textColor="@color/purple"
+        android:layout_margin="1dp"
+        android:padding="16dp"
+        android:gravity="center_horizontal"
+
+        />
+
+    <ImageView
+
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/loginn"
+        />
+
+
+    <EditText
+        android:id="@+id/user_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Usuario"
+        android:padding="30dp"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        />
+    <EditText
+        android:inputType="textPassword"
+        android:id="@+id/password_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:padding="30dp"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:padding="15dp"
+        android:textSize="30dp"
+        android:layout_margin="30dp"
+        />
+    <TextView
+        android:id="@+id/result_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_margin="1dp"
+        android:padding="16dp"
+        android:gravity="center_horizontal"
+
+        />
+
+
+
+</LinearLayout>
