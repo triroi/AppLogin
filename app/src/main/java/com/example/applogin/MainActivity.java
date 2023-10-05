@@ -2,12 +2,16 @@ package com.example.applogin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,13 +38,20 @@ public class MainActivity extends AppCompatActivity {
                     if (user.equals(userCheck) && password.equals(passwordCheck)){
 
                         resultText.setText("Usuario y password son correctos");
+
+
                     }
                     else {
                         resultText.setText("Usuario o password son incorrectos");
+                        button.setBackgroundColor(Color.RED);
+                        button.setText("Error");
+
                     }
                 }
                 else {
                     resultText.setText("Usuario o password sin datos");
+                    button.setBackgroundColor(Color.RED);
+                    button.setText("Error");
                 }
             }
         });
