@@ -2,6 +2,7 @@ package com.example.applogin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.SQLException;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -13,20 +14,26 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 
 public class MainActivity extends AppCompatActivity {
-    private DatabaseHelper dbHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         EditText userEdit= findViewById(R.id.user_edit);
         EditText passworEdit=findViewById(R.id.password_edit);
         TextView resultText= findViewById(R.id.result_set);
         Button button= findViewById(R.id.button);
-        dbHelper=new DatabaseHelper(this);
-        dbHelper.insertarUsuario("ines","ines",24, "Calle Gladiolo, 7");
+
+
 
         button.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -39,20 +46,46 @@ public class MainActivity extends AppCompatActivity {
                 // Comprobar si los campos están vacios o no
                 if (!user.isEmpty() && !password.isEmpty()) {
                     //comprobar si es igual o no
-                    if (dbHelper.verificarCredenciales(user,password)){
+                    if (authenticateUser(user,password)){
                         resultText.setText("Usuario y password son correctos");
                     }
                     else {
                         resultText.setText("Usuario o password son incorrectos");
-                        button.setBackgroundColor(Color.RED);
+
 
                     }
                 }
                 else {
                     resultText.setText("Usuario o password sin datos");
-                    button.setBackgroundColor(Color.RED);
+
                 }
             }
         });
+
+    }
+    public boolean authenticateUser(String username, String password) {
+        Connection connection = DatabaseConnector.connect();
+
+        if (connection != null) {
+            try {
+                String query = "SELECT * FROM usuarios WHERE user=? AND password=?";
+                PreparedStatement preparedStatement = connection.prepareStatement(query);
+                preparedStatement.setString(1, username);
+                preparedStatement.setString(2, password);
+
+                ResultSet resultSet = preparedStatement.executeQuery();
+                boolean authenticated = resultSet.next();
+
+                resultSet.close();
+                preparedStatement.close();
+                DatabaseConnector.disconnect();
+
+                return authenticated;
+            } catch (SQLException | java.sql.SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return false;
     }
 }
