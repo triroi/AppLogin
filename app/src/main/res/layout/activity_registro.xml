@@ -5,26 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".Registro">
+
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="1dp"
         android:gravity="center_horizontal"
         android:padding="16dp"
-        android:text="LOGIN"
+        android:text="REGISTRO"
         android:textColor="@color/purple"
+
         android:textSize="30dp"
-
-        />
-
-    <ImageView
-
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/loginn" />
-
+        tools:layout_editor_absoluteX="1dp" />
 
     <EditText
         android:id="@+id/user_edit"
@@ -45,25 +40,32 @@
         android:padding="30dp"
         android:textSize="20dp" />
 
+    <EditText
+        android:id="@+id/edad_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Edad"
+        android:inputType="number"
+        android:padding="30dp"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/direccion_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Direccion"
+        android:padding="30dp"
+        android:textSize="20dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonRegistrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:padding="15dp"
-        android:text="Login"
-        android:textSize="30dp" />
-
-    <Button
-        android:id="@+id/buttonRegistrar"
-        android:layout_width="358dp"
-        android:layout_height="80dp"
-        android:layout_margin="30dp"
-        android:padding="15dp"
         android:text="Registrar"
-        android:textSize="20dp" />
-
-
+        android:textSize="30dp" />
 
 </LinearLayout>
