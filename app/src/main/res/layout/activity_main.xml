@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+    <!--TextView de título se le da color y se centra-->
 
     <TextView
         android:layout_width="match_parent"
@@ -18,14 +19,15 @@
         android:textSize="30dp"
 
         />
-
+    <!--ImageView con el logo, guardado en la carpeta de drawable-->
     <ImageView
 
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:src="@drawable/loginn" />
 
-
+    <!--EditText para que el usuario escriba el nombre de usuario que se pone como hint
+    -->
     <EditText
         android:id="@+id/user_edit"
         android:layout_width="match_parent"
@@ -33,7 +35,9 @@
         android:layout_marginTop="20dp"
         android:hint="Usuario"
         android:padding="30dp"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        />
+    <!--EditText de contraseña se pone ccomo hint-->
 
     <EditText
         android:id="@+id/password_edit"
@@ -43,7 +47,10 @@
         android:hint="Contraseña"
         android:inputType="textPassword"
         android:padding="30dp"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+
+        />
+    <!--Boton para loguearte-->
 
 
     <Button
@@ -63,6 +70,9 @@
         android:padding="15dp"
         android:text="Registrar"
         android:textSize="20dp" />
+
+        />
+
 
 
 

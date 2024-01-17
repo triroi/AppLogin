@@ -14,11 +14,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Sentencia SQL para crear la tabla
     private static final String CREATE_TABLE =
             "CREATE TABLE IF NOT EXISTS usuarios (" +
-                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "user STRING NOT NULL," +
-                    "password STRING NOT NULL,"+
+                    "id TEXT PRIMARY KEY AUTOINCREMENT," +
+                    "user TEXT NOT NULL," +
+                    "password TEXT NOT NULL,"+
                     "edad INTEGER," +
-                    "direccion STRING);";
+                    "direccion TEXT);";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
