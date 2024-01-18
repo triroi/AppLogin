@@ -23,6 +23,7 @@ import java.sql.ResultSet;
 
 public class MainActivity extends AppCompatActivity {
     private DatabaseHelper dbHelper;
+    public static Usuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!user.isEmpty() && !password.isEmpty()) {
                     //comprobar si es igual o no
                     if (dbHelper.verificarUsuario(user,password)){
+                        usuario=dbHelper.getUsuario(user,password);
                         Intent intent = new Intent(MainActivity.this, Logueado.class);
                         startActivity(intent);
                     }

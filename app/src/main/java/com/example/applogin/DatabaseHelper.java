@@ -1,5 +1,6 @@
 package com.example.applogin;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -8,13 +9,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "Users";
+    private static final String DATABASE_NAME = "Users.db";
     private static final int DATABASE_VERSION = 1;
 
     // Sentencia SQL para crear la tabla
     private static final String CREATE_TABLE =
             "CREATE TABLE IF NOT EXISTS usuarios (" +
-                    "id TEXT PRIMARY KEY AUTOINCREMENT," +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "user TEXT NOT NULL," +
                     "password TEXT NOT NULL,"+
                     "edad INTEGER," +
@@ -64,5 +65,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //db.close();
 
         return count > 0;
+    }
+    @SuppressLint("Range")
+    public Usuario getUsuario(String user, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {"id", "user", "password", "edad", "direccion"};
+        String selection = "user=? AND password=?";
+        String[] selectionArgs = {user, password};
+        Cursor cursor = db.query("usuarios", columns, selection, selectionArgs, null, null, null);
+
+        Usuario usuario = null;
+        if (cursor.moveToFirst()) {
+            usuario = new Usuario(
+                    cursor.getInt(cursor.getColumnIndex("id")),
+                    cursor.getString(cursor.getColumnIndex("user")),
+                    cursor.getString(cursor.getColumnIndex("password")),
+                    cursor.getInt(cursor.getColumnIndex("edad")),
+                    cursor.getString(cursor.getColumnIndex("direccion")));
+        }
+
+        cursor.close();
+        // db.close();
+        return usuario;
     }
 }

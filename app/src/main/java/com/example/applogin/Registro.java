@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Registro extends AppCompatActivity {
     private DatabaseHelper dbHelper;
@@ -26,6 +27,7 @@ public class Registro extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 dbHelper.insertarDatos(userEdit.getText().toString(),passworEdit.getText().toString(),Integer.parseInt(edadEdit.getText().toString()),direccionEdit.getText().toString());
+                Toast.makeText(getBaseContext(),"Usuario registrado correctamente",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Registro.this, MainActivity.class);
                 startActivity(intent);
             }

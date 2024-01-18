@@ -7,7 +7,17 @@ public class Usuario {
     private int edad;
     private String direccion;
 
+    public Usuario() {
+    }
+
     public Usuario(String user, String password, int edad, String direccion) {
+        this.user = user;
+        this.password = password;
+        this.edad = edad;
+        this.direccion = direccion;
+    }
+    public Usuario(int id,String user, String password, int edad, String direccion) {
+        this.id = id;
         this.user = user;
         this.password = password;
         this.edad = edad;
