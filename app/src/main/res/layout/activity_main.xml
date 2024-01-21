@@ -62,6 +62,7 @@
         android:text="Login"
         android:textSize="30dp" />
 
+    <!--Boton para registrarte-->
     <Button
         android:id="@+id/buttonRegistrar"
         android:layout_width="358dp"
@@ -70,10 +71,4 @@
         android:padding="15dp"
         android:text="Registrar"
         android:textSize="20dp" />
-
-        />
-
-
-
-
 </LinearLayout>

@@ -1,21 +1,25 @@
 package com.example.applogin;
+// se crea clase Usuario
 
 public class Usuario {
+    // atributos
     private int id;
     private String user;
     private String password;
     private int edad;
     private String direccion;
+    // cosntructor sin parámetros
 
     public Usuario() {
     }
-
+    // constructor sin id, para no tener que especificarlo al crearlo
     public Usuario(String user, String password, int edad, String direccion) {
         this.user = user;
         this.password = password;
         this.edad = edad;
         this.direccion = direccion;
     }
+    // cosntructor con todos los parámetros para recibir toda la información
     public Usuario(int id,String user, String password, int edad, String direccion) {
         this.id = id;
         this.user = user;
@@ -23,7 +27,7 @@ public class Usuario {
         this.edad = edad;
         this.direccion = direccion;
     }
-
+    // getters y setters
     public int getId() {
         return id;
     }

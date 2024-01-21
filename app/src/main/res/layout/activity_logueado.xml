@@ -6,9 +6,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".Logueado">
-
-
-
+    <!--TextView de título del activity-->
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -20,7 +18,7 @@
         android:textColor="@color/purple"
         android:textSize="30dp"
         tools:layout_editor_absoluteX="1dp" />
-
+    <!--TextView haciendo de label de nombre de usuario del campo con la información de usuario-->
     <TextView
         android:id="@+id/textUser"
         android:layout_width="match_parent"
@@ -32,6 +30,7 @@
         android:textColor="@color/black"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="1dp" />
+    <!--TextView que muestra el user del usaurio que ha hecho login-->
     <TextView
         android:id="@+id/textUserData"
         android:layout_width="match_parent"
@@ -42,7 +41,7 @@
         android:textColor="@color/black"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="1dp" />
-
+    <!--TextView haciendo de label de edad de usuario del campo con la información de usuario-->
     <TextView
         android:id="@+id/textEdad"
         android:layout_width="match_parent"
@@ -54,6 +53,7 @@
         android:textColor="@color/black"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="1dp" />
+    <!--TextView que muestra la edad del usuario que ha hecho login-->
     <TextView
         android:id="@+id/textEdadData"
         android:layout_width="match_parent"
@@ -64,6 +64,7 @@
         android:textColor="@color/black"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="1dp" />
+    <!--TextView haciendo de label de direccion de usuario del campo con la información de usuario-->
     <TextView
         android:id="@+id/textDireccion"
         android:layout_width="match_parent"
@@ -75,6 +76,7 @@
         android:textColor="@color/black"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="1dp" />
+    <!--TextView que muestra la direccion del usaurio que ha hecho login-->
     <TextView
         android:id="@+id/textDireccionData"
         android:layout_width="match_parent"
@@ -85,6 +87,4 @@
         android:textColor="@color/black"
         android:textSize="20dp"
         tools:layout_editor_absoluteX="1dp" />
-
-
 </LinearLayout>
