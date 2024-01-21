@@ -27,7 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-// los métodos que la interfaz te obliga a implementar
+// los métodos que la clase te obliga a implementar
     // cuando se crea, se ejecuta la creación de la tabla
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -43,17 +43,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void insertarDatos(String user,String password, int edad, String direccion) {
         // Obtener una instancia de la base de datos para escribir
         SQLiteDatabase db = this.getWritableDatabase();
-
         // Crear un objeto ContentValues para insertar datos
         ContentValues values = new ContentValues();
         values.put("user", user);
         values.put("password",password);
         values.put("edad", edad);
         values.put("direccion", direccion);
-
         // Insertar datos en la tabla
         long newRowId = db.insert("usuarios", null, values);
-
         // Cierra la conexión a la base de datos
         // comentamos esta línea para poder ver los datos que se insertan con la ventana App Inspection
         //db.close();

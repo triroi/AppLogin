@@ -7,7 +7,6 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
     <!--TextView de título se le da color y se centra-->
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,15 +16,12 @@
         android:text="LOGIN"
         android:textColor="@color/purple"
         android:textSize="30dp"
-
         />
     <!--ImageView con el logo, guardado en la carpeta de drawable-->
     <ImageView
-
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:src="@drawable/loginn" />
-
     <!--EditText para que el usuario escriba el nombre de usuario que se pone como hint
     -->
     <EditText
@@ -38,7 +34,6 @@
         android:textSize="20dp"
         />
     <!--EditText de contraseña se pone ccomo hint-->
-
     <EditText
         android:id="@+id/password_edit"
         android:layout_width="match_parent"
@@ -48,11 +43,8 @@
         android:inputType="textPassword"
         android:padding="30dp"
         android:textSize="20dp"
-
         />
     <!--Boton para loguearte-->
-
-
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
@@ -61,7 +53,6 @@
         android:padding="15dp"
         android:text="Login"
         android:textSize="30dp" />
-
     <!--Boton para registrarte-->
     <Button
         android:id="@+id/buttonRegistrar"

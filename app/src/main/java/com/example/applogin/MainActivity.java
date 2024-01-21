@@ -3,22 +3,12 @@ package com.example.applogin;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.SQLException;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 // Activity main, el del acceso principal, cuenta con la opción de login o de registro
 public class MainActivity extends AppCompatActivity {
@@ -40,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Button buttonRegistrar= findViewById(R.id.buttonRegistrar);
 
 
-        // se crea un lsitener para el botón de login
+        // se crea un listener para el botón de login
         // cuando se pulsa comprueba si los campos están rellenos o no y se verifica si son compatibles
         // con los datos de la bbdd
         button.setOnClickListener(new View.OnClickListener(){
